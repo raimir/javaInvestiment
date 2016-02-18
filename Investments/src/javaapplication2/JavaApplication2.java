@@ -18,37 +18,40 @@ public class JavaApplication2 {
        double eco = 0;
        double econ = 0;
        double dezpc = 0;
-       double liq = 1200;
+       double liq = 1000;
        double liq10 = (liq * 0.30);
        eco = (liq * 0.30);
        econ = (liq * 0.30);
       
        String liquido, economia, normal;
        System.out.println("___________________________________________________________________");
-       System.out.println("\tliquido\t\t" + "economia\t\t" + "economia normal" );
+       System.out.println("\tliquido\t\t" + "economia\t" + "economia normal" );
        liquido = String.format("%.2f", (liq - liq10));
        economia = String.format("%.2f", eco);
        normal = String.format("%.2f", econ);
        System.out.print("1        " + liquido );
        System.out.print("\t          " + economia );
-       System.out.println( "\t\t         " + normal );
+       System.out.println( "\t         " + normal );
        
-       for( int x = 2; x < 25; x++ ) {
-          dezpc = (eco * 0.10);
+       for( int x = 2; x < 321; x++ ) {
+          String space;
+           dezpc = (eco * 0.01);
           econ += (liq* 0.30);
           eco = eco - dezpc;
           liq10 = liq + dezpc;
           eco += (liq10*0.30);
           
           liquido = String.format("%.2f", (liq10 - (liq10 *0.30)) );
-          liquido = x + (liquido.length() > 6 ? "              ".substring("              ".length() - liquido.length()) + liquido : "        " + liquido ); 
-          //liquido = liquido.length() >= 7 ? x + "        " + liquido : x + "        " + liquido; 
+          space = (x + "               ").substring( 0, 15);
+          liquido =  ( space.substring(0, space.length() - liquido.length() ) + liquido ); 
           
           economia = String.format("%.2f", eco);
-          economia = "\t\t" + (economia.length() >= 7 ? " "  + economia : "  "  + economia);
+          space = "          ".substring(0, 8);
+          economia = "\t\t" + ( space.substring(0, space.length() - economia.length() ) + economia ); 
           
           normal = String.format("%.2f", econ);
-          normal = "\t\t\t" + (normal.length() >= 7 ? normal : " "  + normal);
+          space = "               ".substring(0, 15);
+          normal = "\t" + ( space.substring(0, space.length() - normal.length() ) + normal ); 
           
           System.out.print(liquido);
           System.out.print(economia);
