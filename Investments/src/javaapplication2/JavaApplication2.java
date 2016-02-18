@@ -29,21 +29,21 @@ public class JavaApplication2 {
        liquido = String.format("%.2f", (liq - liq10));
        economia = String.format("%.2f", eco);
        normal = String.format("%.2f", econ);
-       System.out.print("1        " + liquido );
+       System.out.print("1\t " + liquido );
        System.out.print("\t          " + economia );
        System.out.println( "\t         " + normal );
        
-       for( int x = 2; x < 321; x++ ) {
+       for( int x = 2; x < 194; x++ ) {
           String space;
-           dezpc = (eco * 0.01);
+           dezpc = (eco * 0.10);
           econ += (liq* 0.30);
           eco = eco - dezpc;
           liq10 = liq + dezpc;
           eco += (liq10*0.30);
           
           liquido = String.format("%.2f", (liq10 - (liq10 *0.30)) );
-          space = (x + "               ").substring( 0, 15);
-          liquido =  ( space.substring(0, space.length() - liquido.length() ) + liquido ); 
+          space =  ("       ").substring( 0, 7);
+          liquido =  x + "\t" + ( space.substring(0, space.length() - liquido.length() ) + liquido ); 
           
           economia = String.format("%.2f", eco);
           space = "          ".substring(0, 8);
